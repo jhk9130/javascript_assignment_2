@@ -67,6 +67,13 @@ const ex9 = () => {
     let item1 = { quantity: 1, cost: 1.00 }
     let item2 = { quantity: 2, cost: 2.00 }
     let item3 = { quantity: 3, cost: 3.00 }
+
+    let itemArray = [];
+    itemArray.push(item1);
+    itemArray.push(item2);
+    itemArray.push(item3);
+
+    console.log(calculateTotal(itemArray));
 }
 
 const ex10 = () => {
@@ -222,6 +229,20 @@ const countOver20 = (personArray) => {
     return retVal;
 }
 
+const calculateTotal = (itemArray) => {
+    let retVal = 0;
+    let tempTotal = 0;
+    for (let i of itemArray) {
+        tempTotal = tempTotal + i.quantity * i.cost;
+    }
+    retVal += tempTotal;
+    return retVal;
+}
+
+const calcCellBillForPerson = (usageData, person) => {
+    
+}
+
 const main = async () => {
     // ex1();
     // ex2();
@@ -231,8 +252,8 @@ const main = async () => {
     // ex6();
     // ex7();
     // ex8();
-    ex9();
-    // ex10();
+    // ex9();
+    ex10();
 }
 
 main();
