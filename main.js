@@ -240,22 +240,17 @@ const calculateTotal = (itemArray) => {
 }
 
 const calcCellBillForPerson = (usageData, person) => {
-    // let retVal = [];
-    // let userId = person.userId;
-    // let fullName = person.fullName;
-    // let minutes = 0;
     let formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD'
     });
     let usageMinutes = 0;
+
     for (let i of usageData) {
         if (i.userId === person.userId) {
              usageMinutes += i.minutes;
         }
     }
-    // let perMinuteCharge = 0.1;
-    // let charges = minutes * perMinuteCharge;
 
     let retVal = { 
         userId: person.userId, 
