@@ -215,7 +215,7 @@ const createPerson = (stringName, numberAge) => {
 const countOver20 = (personArray) => {
     let retVal = 0;
     for (let i of personArray) {
-        if (personArray.age > 20) {
+        if (i.age > 20) {
             retVal++;
         }
     }
