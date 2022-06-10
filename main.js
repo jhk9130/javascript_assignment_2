@@ -42,6 +42,43 @@ const ex7 = () => {
     let person1 = { name: "Alice", age: 22 }
     let person2 = { name: "Bob", age: 21 }
     let person3 = { name: "Charlie", age: 23 }
+
+    let peopleAge = [];
+    peopleAge.push(person1, person2, person3);
+    peopleAge.sort(function (a, b) { return a.age - b.age });
+
+    console.table(peopleAge);
+}
+
+const ex8 = () => {
+    let p1 = createPerson("Alice", 11)
+    let p2 = createPerson("Bob", 22)
+    let p3 = createPerson("Charlie", 33)
+
+    let personArray = [];
+    personArray.push(p1)
+    personArray.push(p2)
+    personArray.push(p3)
+
+    console.log(countOver20(personArray))
+}
+
+const ex9 = () => {
+    let item1 = { quantity: 1, cost: 1.00 }
+    let item2 = { quantity: 2, cost: 2.00 }
+    let item3 = { quantity: 3, cost: 3.00 }
+}
+
+const ex10 = () => {
+    let usageData = [
+        { userId: 1111, minutes: 10.0 },
+        { userId: 2222, minutes: 20.0 },
+        { userId: 3333, minutes: 30.0 }
+    ]
+
+    let person = { userId: 3333, fullName: "Charlie" }
+    let result = calcCellBillForPerson(usageData, person)
+    console.log(result)
 }
 
 //
@@ -155,6 +192,34 @@ const countItems = (array) => {
         return retVal;
     }
 
+    let result = {
+        numIntegers: countIntegerNumbers(array),
+        numDecimals: countDecimalNumbers(array),
+        numStrings: countStrings(array)
+    }
+
+    return result;
+
+}
+
+const createPerson = (stringName, numberAge) => {
+    let result = {
+        fullname: stringName,
+        age: numberAge
+    }
+
+    return result;
+
+}
+
+const countOver20 = (personArray) => {
+    let retVal = 0;
+    for (let i of personArray) {
+        if (personArray.age > 20) {
+            retVal++;
+        }
+    }
+    return retVal;
 }
 
 const main = async () => {
@@ -165,7 +230,7 @@ const main = async () => {
     // ex5();
     // ex6();
     // ex7();
-    // ex8();
+    ex8();
     // ex9();
     // ex10();
 }
