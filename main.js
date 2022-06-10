@@ -240,7 +240,16 @@ const calculateTotal = (itemArray) => {
 }
 
 const calcCellBillForPerson = (usageData, person) => {
-    
+    let retVal = [];
+    let userId = person.userId;
+    let minutes = 0;
+    if (userId === usageData.userId) {
+        minutes += usageData.minutes;
+    }
+    let perMinuteCharge = 0.1;
+    let charges = minutes * perMinuteCharge;
+
+    return 
 }
 
 const main = async () => {
